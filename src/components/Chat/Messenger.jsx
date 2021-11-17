@@ -19,7 +19,8 @@ export default function Messenger() {
       try {
         const token = localStorage.getItem("authToken");
         const { data } = await axios.get(
-          "/api/chat/conversations/" + user._id,
+          `${process.env.REACT_APP_REACT_APP_SERVER_URL}/api/chat/conversations/` +
+            user._id,
           {
             headers: { Authorization: `Bearer ${token}` },
           }

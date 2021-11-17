@@ -5,7 +5,10 @@ export const getProducts = (category) => async (dispatch) => {
   if (!category) {
     try {
       dispatch({ type: actionTypes.GET_PRODUCTS_REQUEST });
-      const { data } = await axios.get("/products");
+      console.log(process.env.REACT_APP_REACT_APP_SERVER_URL);
+      const { data } = await axios.get(
+        `https://cavalieriserver.herokuapp.com/products`
+      );
       dispatch({ type: actionTypes.GET_PRODUCTS_SUCCESS, payload: data });
     } catch (error) {
       dispatch({
