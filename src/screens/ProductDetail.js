@@ -84,51 +84,53 @@ const ProductDetails = ({ match, history }) => {
         <h2>{error}</h2>
       ) : (
         <>
-          {product && (
+          {product._id && (
             <div className="row">
               <Helmet>
                 <title>{`Cavalieri Suits | ${product.name}`}</title>
                 <meta name="description" content={`${product.description}`} />
               </Helmet>
               <div className="productdetails__left col-12 col-lg-5 my-auto">
-                <div className="left__image">
-                  <Carousel
-                    // activeIndex={index}
-                    // onSelect={handleSelect}
-                    nextLabel=""
-                    prevLabel=""
-                  >
-                    {product.imageUrl.map((i, index) => (
-                      <Carousel.Item key={index}>
-                        <img
-                          className="d-block w-100"
-                          src={i}
-                          alt={index}
-                          data-bs-toggle="modal"
-                          data-bs-target={`#deliverModal${index}`}
-                        />
-                      </Carousel.Item>
-                    ))}
-                  </Carousel>
-                  {product.imageUrl.map((i, index) => (
-                    <div
-                      className="modal fade"
-                      id={`deliverModal${index}`}
-                      key={index}
-                      tabIndex="-1"
-                      aria-labelledby={`deliverModal${index}`}
-                      aria-hidden="true"
+                {Array.isArray(product.imageUrl) && (
+                  <div className="left__image">
+                    <Carousel
+                      // activeIndex={index}
+                      // onSelect={handleSelect}
+                      nextLabel=""
+                      prevLabel=""
                     >
-                      <div className="modal-dialog">
-                        <div className="modal-content">
-                          <div className="modal-body p-1">
-                            <img className="modal-img" src={i} alt={i} />
+                      {product.imageUrl.map((i, index) => (
+                        <Carousel.Item key={index}>
+                          <img
+                            className="d-block w-100"
+                            src={i}
+                            alt={index}
+                            data-bs-toggle="modal"
+                            data-bs-target={`#deliverModal${index}`}
+                          />
+                        </Carousel.Item>
+                      ))}
+                    </Carousel>
+                    {product.imageUrl.map((i, index) => (
+                      <div
+                        className="modal fade"
+                        id={`deliverModal${index}`}
+                        key={index}
+                        tabIndex="-1"
+                        aria-labelledby={`deliverModal${index}`}
+                        aria-hidden="true"
+                      >
+                        <div className="modal-dialog">
+                          <div className="modal-content">
+                            <div className="modal-body p-1">
+                              <img className="modal-img" src={i} alt={i} />
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </div>
               <div className="productdetails__right d-flex row justify-content-evenly my-5 col-12 col-lg-7">
                 <Container className="left__info px-5 py-2">
