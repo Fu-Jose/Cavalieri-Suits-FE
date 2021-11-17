@@ -4,7 +4,7 @@ import Conversations from "./Conversations";
 // import UsersList from "./UsersList";
 import Message from "./Message";
 import { useSelector } from "react-redux";
-import axios from "../../../../client/backend";
+import axios from "../../client/backend";
 // import { io } from "socket.io-client";
 
 export default function Messenger() {
