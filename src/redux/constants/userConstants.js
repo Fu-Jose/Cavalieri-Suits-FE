@@ -1,0 +1,3 @@
+export const GET_USER_INFO = "GET_USER_INFO";
+export const GET_USER_INFO_FAIL = "GET_USER_INFO_FAIL";
+export const REMOVE_USER_INFO = "REMOVE_USER_INFO";

@@ -1,0 +1,259 @@
+:root {
+  --dark: #171717;
+  --green: rgba(255, 255, 255, 0.8);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif !important;
+  background-color: #f4f4f4;
+  /* height: 100%; */
+}
+
+#root > main > div > div:nth-child(1) > video {
+  object-fit: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Source Serif Pro", sans-serif !important;
+}
+
+/* main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+} */
+
+box-icon {
+  vertical-align: top;
+}
+
+.searchbar {
+  text-align: left !important;
+  width: 40vw;
+  padding-left: 40px !important;
+}
+
+img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.figure {
+  position: relative;
+  max-width: 100%;
+}
+.figure img.img-hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.figure:hover img.img-hover {
+  opacity: 1;
+}
+
+.card-img:hover > .fav-heart {
+  /* display: none; */
+  bottom: -15px;
+  right: -15px;
+}
+
+.fav-heart {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.fav-heart:hover {
+  transform: scale(1.2);
+}
+
+.backdrop {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1900;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sidedrawer {
+  height: 100%;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  transform: translateX(-100%);
+  transition: all 0.3s ease-out;
+}
+
+.sidedrawer.show {
+  transform: translateX(0);
+}
+
+#buttons-container {
+  border: 2px solid red;
+}
+
+#buttons-container .paypal-button-container .paypal-button-row:nth-of-type(2),
+#buttons-container .paypal-button-container .paypal-button-row:nth-of-type(3) {
+  display: none;
+}
+
+.list-group-item {
+  border: 0px !important;
+}
+
+.list-group-item:hover {
+  background: #171717 !important;
+  color: #fff !important;
+}
+
+.list-group-item:first-child {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+.list-group-item:last-child {
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.sidedrawer__bottom > .container > img {
+  width: 70%;
+}
+
+.sidedrawer__bottom > .container > p {
+  font-size: 0.6rem;
+  margin-bottom: 0;
+}
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 50vh;
+  /* object-fit: cover; */
+}
+
+.history-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* //X-Small devices (575px and down)*/
+@media (max-width: 575.9px) {
+  .footer-text {
+    font-size: 1.8rem;
+  }
+  .sidedrawer {
+    width: 100%;
+  }
+  .text {
+    font-size: 1.8rem;
+  }
+  /* #home_newsletter_input {
+    font-size: 0.8rem;
+  } */
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .footer-text {
+    font-size: 2rem;
+  }
+  .sidedrawer {
+    width: 100%;
+  }
+  .text {
+    font-size: 2rem;
+  }
+  /* #home_newsletter_input {
+    font-size: 0.8rem;
+  } */
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .footer-text {
+    font-size: 2rem;
+  }
+  #home_newsletter_input {
+    font-size: 0.8rem;
+  }
+  .sidedrawer {
+    width: 50%;
+  }
+  .text {
+    font-size: 1.6rem;
+  }
+  .product-img:hover {
+    transform: scale(1.2);
+  }
+  .modal-img:hover {
+    transform: scale(1.5);
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .footer-text {
+    font-size: 1rem;
+  }
+  .sidedrawer {
+    width: 40%;
+  }
+  .text {
+    font-size: 1.5rem;
+  }
+
+  .cartscreen__left {
+    border-right: 1px solid #000;
+  }
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .footer-text {
+    font-size: 1rem;
+  }
+  .sidedrawer {
+    width: 30%;
+  }
+  .text {
+    font-size: 1.4rem;
+  }
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .footer-text {
+    font-size: 1rem;
+  }
+  .sidedrawer {
+    width: 20%;
+  }
+  .text {
+    font-size: 1.2rem;
+  }
+}
