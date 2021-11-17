@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { getUserInfo } from "../../redux/actions/userActions";
-import axios from "axios";
+import axios from "../../client/backend";
 import Loading from "../Loading";
 
 export default function Favorites({ user }) {

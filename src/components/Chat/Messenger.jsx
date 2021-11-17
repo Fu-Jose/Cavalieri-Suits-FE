@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { BiSend } from "react-icons/bi";
 import { useSelector } from "react-redux";
-import axios from "axios";
+import axios from "../../client/backend";
 import Conversations from "./Conversations";
 import Message from "./Message";
 
@@ -19,8 +19,7 @@ export default function Messenger() {
       try {
         const token = localStorage.getItem("authToken");
         const { data } = await axios.get(
-          `${process.env.REACT_APP_REACT_APP_SERVER_URL}/api/chat/conversations/` +
-            user._id,
+          `/api/chat/conversations/` + user._id,
           {
             headers: { Authorization: `Bearer ${token}` },
           }

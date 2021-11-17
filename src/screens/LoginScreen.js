@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import axios from "axios";
+import axios from "../client/backend";
 import { Button, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { getUserInfo } from "../redux/actions/userActions";

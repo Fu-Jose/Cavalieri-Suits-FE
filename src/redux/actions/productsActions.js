@@ -1,14 +1,11 @@
 import * as actionTypes from "../constants/productConstants";
-import axios from "axios";
+import axios from "../../client/backend";
 
 export const getProducts = (category) => async (dispatch) => {
   if (!category) {
     try {
       dispatch({ type: actionTypes.GET_PRODUCTS_REQUEST });
-      console.log(process.env.REACT_APP_REACT_APP_SERVER_URL);
-      const { data } = await axios.get(
-        `https://cavalieriserver.herokuapp.com/products`
-      );
+      const { data } = await axios.get(`/products`);
       dispatch({ type: actionTypes.GET_PRODUCTS_SUCCESS, payload: data });
     } catch (error) {
       dispatch({

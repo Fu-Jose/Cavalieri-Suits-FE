@@ -1,5 +1,5 @@
 import * as actionTypes from "../constants/userConstants";
-import axios from "axios";
+import axios from "../../client/backend";
 
 export const getUserInfo = (user_id) => async (dispatch) => {
   try {

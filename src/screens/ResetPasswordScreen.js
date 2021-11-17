@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { Button, Form } from "react-bootstrap";
-import axios from "axios";
+import axios from "../client/backend";
 
 const ResetPasswordScreen = ({ history, match }) => {
   const [password, setPassword] = useState("");

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Sidebar from "../../components/Admin/Sidebar";
-import axios from "axios";
+import axios from "../../client/backend";
 import Loading from "../../components/Loading";
 import Error from "../../components/Error";
 import { BiMessageDetail, BiTrash } from "react-icons/bi";

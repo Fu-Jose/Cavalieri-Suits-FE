@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import axios from "axios";
+import axios from "../client/backend";
 import { Button, Form } from "react-bootstrap";
 
 const RegisterScreen = ({ history }) => {

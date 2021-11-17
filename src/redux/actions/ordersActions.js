@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../client/backend";
 import * as actionTypes from "../constants/ordersContants";
 import { REMOVE_CART_ITEMS } from "../constants/cartConstants";
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import axios from "axios";
+import axios from "../../client/backend";
 import dateFormat from "dateformat";
 import { i18n } from "dateformat";
 import Sidebar from "../../components/Admin/Sidebar";

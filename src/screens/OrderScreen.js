@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Helmet } from "react-helmet";
 import { PayPalButton } from "react-paypal-button-v2";
-import axios from "axios";
+import axios from "../client/backend";
 import dateFormat from "dateformat";
 import Loading from "../components/Loading";
 import Error from "../components/Error";

@@ -5,7 +5,7 @@ import { Button, Carousel, Container } from "react-bootstrap";
 import Loading from "../components/Loading";
 import { getProductDetails } from "../redux/actions/productsActions";
 import { addToCart } from "../redux/actions/cartActions";
-import axios from "axios";
+import axios from "../client/backend";
 import { getUserInfo } from "../redux/actions/userActions";
 
 const ProductDetails = ({ match, history }) => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useDispatch } from "react-redux";
-import axios from "axios";
+import axios from "../../client/backend";
 import Error from "../../components/Error";
 import Sidebar from "../../components/Admin/Sidebar";
 import Loading from "../../components/Loading";
@@ -22,12 +22,9 @@ export default function ProductsScreen() {
       const getProducts = async () => {
         try {
           const token = localStorage.getItem("authToken");
-          const { data } = await axios.get(
-            `${process.env.REACT_APP_REACT_APP_SERVER_URL}/products`,
-            {
-              headers: { Authorization: `Bearer ${token}` },
-            }
-          );
+          const { data } = await axios.get(`/products`, {
+            headers: { Authorization: `Bearer ${token}` },
+          });
           await axios.get("/users", {
             headers: { Authorization: `Bearer ${token}` },
           });

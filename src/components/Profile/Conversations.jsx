@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BiUserCircle } from "react-icons/bi";
-import axios from "axios";
+import axios from "../../client/backend";
 
 export default function Conversations({ conversation, currentUser }) {
   const [user, setUser] = useState("");
