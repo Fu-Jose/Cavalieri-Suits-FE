@@ -93,7 +93,9 @@ export default function OrderScreen(props) {
                   <div key={item._id} className="mx-auto row">
                     <div className="col-8 p-0">{item.name}</div>
                     <div className="col-2 p-0">x {item.qty}</div>
-                    <div className="col-2 p-0">{item.qty * item.price}</div>
+                    <div className="col-2 p-0">
+                      {(item.qty * item.price).toFixed(2)}
+                    </div>
                     <br />
                   </div>
                 ))}
@@ -129,7 +131,7 @@ export default function OrderScreen(props) {
                   )}
                   {loadingPay && <Loading />}
                   <PayPalButton
-                    amount={order.totalPrice}
+                    amount={order.totalPrice.toFixed(2)}
                     onSuccess={successPaymentHandler}
                   />
                 </div>
