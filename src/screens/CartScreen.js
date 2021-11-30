@@ -64,19 +64,19 @@ const CartScreen = () => {
                 ))
               )}
             </div>
-            <div className="cartscreen__right col-12 col-md-4 py-5 px-0 px-lg-5 my-auto">
-              <div className="cartscreen__info py-3">
+            <div className="cartscreen__right col-12 col-md-4 py-3 px-0 px-lg-5 my-auto text-center">
+              <div className="cartscreen__info ">
                 <p>
                   Subtotal ({getCartCount()}){" "}
                   {getCartCount() === 1 ? "artículo" : "artículos"}
                 </p>
                 <p>${getCartSubtotal().toFixed(2)}</p>
               </div>
-            </div>
-            <div className="cartscreen__left col-12 col-md-8 py-3 py-lg-5 px-0 px-md-0 px-lg-5">
-              <Button onClick={continueHandler} variant="dark">
-                Continuar <BiCart />
-              </Button>
+              <div>
+                <Button onClick={continueHandler} variant="dark">
+                  Continuar <BiCart />
+                </Button>
+              </div>
             </div>
           </div>
         </div>
