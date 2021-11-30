@@ -40,11 +40,15 @@ const CartScreen = () => {
         <title>Cavalieri Suits | Carrito</title>
         <meta name="description" content="Su carrito de compras" />
       </Helmet>
-      <div className="d-flex my-3">
-        <Container className="col-12 col-lg-10 p-md-5 row mx-auto">
-          <div className="row shadow p-md-5 mx-auto">
-            <Container className="cartscreen__left col-12 col-md-8 py-5 px-4 px-md-0 px-lg-5">
-              <h2 className="py-3">CARRITO DE COMPRAS</h2>
+      <div className="d-flex my-lg-3">
+        <div className="col-12 col-lg-10 p-md-5 row mx-auto">
+          <div className="row shadow px-0 p-md-5 mx-auto">
+            <div className="cartscreen__left col-12 col-md-8 py-0 py-lg-5 px-0 px-lg-5 ">
+              <h2 className="py-2 py-lg-3 border-bottom text-center">
+                CARRITO DE COMPRAS
+              </h2>
+            </div>
+            <div className="cartscreen__left col-12 col-md-8 py-0 py-lg-5 px-0 px-md-0 px-lg-5">
               {cartItems.length === 0 ? (
                 <div>
                   Su carrito está vacío. <Link to="/">Volver atrás?</Link>
@@ -59,8 +63,8 @@ const CartScreen = () => {
                   />
                 ))
               )}
-            </Container>
-            <Container className="cartscreen__right col-12 col-md-4 py-5 px-4 px-lg-5 my-auto">
+            </div>
+            <div className="cartscreen__right col-12 col-md-4 py-5 px-0 px-lg-5 my-auto">
               <div className="cartscreen__info py-3">
                 <p>
                   Subtotal ({getCartCount()}){" "}
@@ -68,14 +72,14 @@ const CartScreen = () => {
                 </p>
                 <p>${getCartSubtotal().toFixed(2)}</p>
               </div>
-              <div className="my-auto">
-                <Button onClick={continueHandler} variant="dark">
-                  Continuar <BiCart />
-                </Button>
-              </div>
-            </Container>
+            </div>
+            <div className="cartscreen__left col-12 col-md-8 py-3 py-lg-5 px-0 px-md-0 px-lg-5">
+              <Button onClick={continueHandler} variant="dark">
+                Continuar <BiCart />
+              </Button>
+            </div>
           </div>
-        </Container>
+        </div>
       </div>
     </>
   );

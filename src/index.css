@@ -145,9 +145,12 @@ img {
 }
 
 .loading {
-  width: 100vw;
-  height: 100vh;
+  height: 70vh;
   align-items: center;
+}
+
+.cart-img {
+  width: 100px;
 }
 
 .card-img-top {
