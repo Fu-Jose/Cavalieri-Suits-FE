@@ -13,7 +13,7 @@ function CartItem({ item, qtyChangeHandler, removeFromCartHandler }) {
         <div className=" text-truncate">
           <Link
             className="text-decoration-none text-reset"
-            to={`/products/${item.product}`}
+            to={`/product/${item.product}`}
           >
             {item.name}
           </Link>
@@ -33,7 +33,7 @@ function CartItem({ item, qtyChangeHandler, removeFromCartHandler }) {
           </select>
         </div>
       </div>
-      <div className="align-self-start">
+      <div className="align-self-start cursor-pointer">
         <BiTrash onClick={() => removeFromCartHandler(item.product)} />
       </div>
     </div>

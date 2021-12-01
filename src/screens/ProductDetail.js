@@ -58,26 +58,28 @@ const ProductDetails = ({ match, history }) => {
 
   const addToFavorites = async () => {
     if (user._id) {
+      setLoad(true);
       const token = localStorage.getItem("authToken");
       await axios.put(`/users/${user._id}/favorites/${product._id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setIsFavorite(true);
-      setLoad(true);
+    } else {
+      alert("Por favor inicie sesión para agregar y gestionar sus favoritos");
     }
   };
 
   const removeFromFavorites = async () => {
+    setLoad(true);
     const token = localStorage.getItem("authToken");
     await axios.put(`/users/${user._id}/favorites/${product._id}/remove`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     setIsFavorite(false);
-    setLoad(true);
   };
 
   return (
-    <Container className="productdetails mx-auto my-3">
+    <Container className="productdetails mx-auto my-3 my-lg-0">
       {loading ? (
         <Loading />
       ) : error ? (
@@ -102,7 +104,7 @@ const ProductDetails = ({ match, history }) => {
                       {product.imageUrl.map((i, index) => (
                         <Carousel.Item key={index}>
                           <img
-                            className="d-block w-100"
+                            className="d-block w-100 cursor-pointer"
                             src={i}
                             alt={index}
                             data-bs-toggle="modal"
@@ -132,14 +134,14 @@ const ProductDetails = ({ match, history }) => {
                   </div>
                 )}
               </div>
-              <div className="productdetails__right d-flex row justify-content-evenly my-5 col-12 col-lg-7">
+              <div className="productdetails__right d-flex row justify-content-evenly mx-auto my-5 col-12 col-lg-7">
                 <Container className="left__info px-5 py-2">
                   <h2 className="left__name fw-bold fs-1">{product.name}</h2>
                   <p>{product.description}</p>
                 </Container>
                 <Container className="right__info px-5 py-2">
                   <p>
-                    Precio: <span>${product.price}</span>
+                    Precio: <strong>${product.price}</strong>
                   </p>
                   <p>
                     Disponibilidad:{" "}
@@ -161,10 +163,10 @@ const ProductDetails = ({ match, history }) => {
                       ))}
                     </select>
                   </p>
-                  <div className="row justify-content-between">
+                  <div className="row py-3 justify-content-between text-center">
                     <div className="col-12 my-2 col-lg-6">
                       <Button
-                        className="col-9"
+                        className="col-8 col-md-6 col-lg-12"
                         variant="dark"
                         onClick={addToCartHandler}
                       >
@@ -181,37 +183,99 @@ const ProductDetails = ({ match, history }) => {
                     <div className="col-12 my-2 col-lg-6">
                       {isFavorite ? (
                         <Button
-                          className="col-9"
+                          className="col-8 col-md-6 col-lg-12"
                           variant="secondary"
                           onClick={removeFromFavorites}
                         >
-                          <box-icon
-                            type="solid"
-                            color="white"
-                            size="sm"
-                            name="heart"
-                            animation="tada-hover"
-                          />
-                          <span className="ms-2">
-                            {load ? <></> : "En favoritos"}
-                          </span>
+                          {!load ? (
+                            <box-icon
+                              type="solid"
+                              color="white"
+                              size="sm"
+                              name="heart"
+                              animation="tada-hover"
+                            />
+                          ) : (
+                            <></>
+                          )}
+                          {load ? (
+                            <div className="d-flex justify-content-center align-items-center">
+                              <div
+                                className="spinner-grow spinner-button mx-1 py-1"
+                                role="status"
+                              >
+                                <span className="visually-hidden">
+                                  Loading...
+                                </span>
+                              </div>
+                              <div
+                                className="spinner-grow spinner-button mx-1 py-1"
+                                role="status"
+                              >
+                                <span className="visually-hidden">
+                                  Loading...
+                                </span>
+                              </div>
+                              <div
+                                className="spinner-grow spinner-button mx-1 py-1"
+                                role="status"
+                              >
+                                <span className="visually-hidden">
+                                  Loading...
+                                </span>
+                              </div>
+                            </div>
+                          ) : (
+                            <span className="ms-2">En favoritos</span>
+                          )}
                         </Button>
                       ) : (
                         <Button
-                          className="col-9"
+                          className="col-8 col-md-6 col-lg-12"
                           variant="secondary"
                           onClick={addToFavorites}
                         >
-                          <box-icon
-                            type="regular"
-                            color="white"
-                            size="sm"
-                            name="heart"
-                            animation="tada-hover"
-                          />
-                          <span className="ms-2">
-                            {load ? <></> : "Agregar a favoritos"}
-                          </span>
+                          {!load ? (
+                            <box-icon
+                              type="regular"
+                              color="white"
+                              size="sm"
+                              name="heart"
+                              animation="tada-hover"
+                            />
+                          ) : (
+                            <></>
+                          )}
+                          {load ? (
+                            <div className="d-flex justify-content-center align-items-center">
+                              <div
+                                className="spinner-grow spinner-button mx-1 py-1"
+                                role="status"
+                              >
+                                <span className="visually-hidden">
+                                  Loading...
+                                </span>
+                              </div>
+                              <div
+                                className="spinner-grow spinner-button mx-1 py-1"
+                                role="status"
+                              >
+                                <span className="visually-hidden">
+                                  Loading...
+                                </span>
+                              </div>
+                              <div
+                                className="spinner-grow spinner-button mx-1 py-1"
+                                role="status"
+                              >
+                                <span className="visually-hidden">
+                                  Loading...
+                                </span>
+                              </div>
+                            </div>
+                          ) : (
+                            <span className="ms-2">Agregar a favoritos</span>
+                          )}
                         </Button>
                       )}
                     </div>

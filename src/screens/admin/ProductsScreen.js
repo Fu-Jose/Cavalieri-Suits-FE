@@ -68,12 +68,12 @@ export default function ProductsScreen() {
   };
 
   return (
-    <div className="d-flex row mx-auto">
+    <div className="d-flex row mx-auto h-100">
       <Helmet>
         <title>Cavalieri Suits | Administrador</title>
       </Helmet>
       <Sidebar />
-      <div className="mx-auto col-10">
+      <div className="mx-auto col-10 vh-100 overflow-auto">
         {error ? (
           <Error error="Su sesión ha caducado" />
         ) : loading ? (

@@ -21,7 +21,7 @@ const Navbar = ({ click }) => {
       <div className="col">
         <Link to="/">
           <img
-            style={{ height: "50px" }}
+            className="logo-img"
             src="https://res.cloudinary.com/donxjonx/image/upload/v1632581908/cavalieri/LOGO_CAVALIERI_BN-3_jlxy2b.png"
             alt="logo"
           />
@@ -41,7 +41,6 @@ const Navbar = ({ click }) => {
         <li className="mx-1 ">
           <Link className="text-black text-decoration-none" to="/login">
             <BiUser />
-            {user ? <span className="fs-6"> {user.username}</span> : <></>}
           </Link>
         </li>
       </ul>

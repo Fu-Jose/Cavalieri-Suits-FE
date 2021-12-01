@@ -6,14 +6,14 @@ export default function Newsletter() {
   return (
     <>
       {!role ? (
-        <section className="d-flex bg-light container-fluid mx-auto pt-2 row">
+        <section className="d-flex bg-light container-fluid mx-auto row">
           <div className="newsletter__image d-none d-md-block col-md-6 p-4">
             <img
               src="https://res.cloudinary.com/donxjonx/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1634654236/cavalieri/cava2_pox6yx.jpg"
               alt="newsletter logo"
             />
           </div>
-          <div className="newsletter__content col-12 col-md-6 align-self-center">
+          <div className="newsletter__content col-12 col-md-6 py-3 align-self-center">
             <div className="text-center">
               <h2>- Suscríbete -</h2>
               <p>

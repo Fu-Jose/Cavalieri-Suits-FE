@@ -6,6 +6,7 @@ import PrivateRoute from "./routing/PrivateRoute";
 import Navbar from "./components/Navbar/Navbar";
 import Backdrop from "./components/Navbar/Backdrop";
 import Sidedrawer from "./components/Navbar/Sidedrawer";
+import Loading from "./components/Loading";
 import Newsletter from "./components/Newsletter";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
@@ -68,7 +69,7 @@ function App() {
       <Sidedrawer show={sideToggle} click={() => setSideToggle(false)} />
       <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <main>
-        <Suspense fallback={<div>LOADING...</div>}>
+        <Suspense fallback={<Loading />}>
           <Switch>
             <Route exact path="/" component={HomeScreen} />
             <Route path="/products" component={ProductScreen} />

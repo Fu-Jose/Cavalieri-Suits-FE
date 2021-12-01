@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 
 export default function Banner() {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid py-5">
       <div className="row">
-        <div className="figure col-12 col-md-6 p-2 p-lg-5">
+        <div className="figure col-12 col-md-6 p-lg-5">
           <img
             className="img-main "
             src="https://res.cloudinary.com/donxjonx/image/upload/v1632485007/cavalieri/241970855_390203482597218_6613829671935614411_n.jpg_mbmwha.jpg"
             alt="banner"
           />
           <img
-            className="img-hover p-2 p-lg-5"
+            className="img-hover"
             src="https://res.cloudinary.com/donxjonx/image/upload/v1632486349/cavalieri/242512521_550045722944059_1039020318899813484_n.jpg_yzdz3v.jpg"
             alt="banner"
           />

@@ -9,13 +9,13 @@ const HomeScreen = () => {
   return (
     <div className="homescreen container-fluid px-0 mx-0">
       <ReactPlayer
+        className="react-player"
         url="https://res.cloudinary.com/donxjonx/video/upload/v1636644326/cavalieri/202111-11-0_yt7umc.mp4"
         playing={true}
         loop={true}
         volume={0}
         muted={true}
         width="100%"
-        height="70vh"
       />
       <Banner />
       <BestSelling />

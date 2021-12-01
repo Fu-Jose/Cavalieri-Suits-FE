@@ -1,12 +1,11 @@
 import React from "react";
 
-export default function Banner() {
+export default function Banner4() {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid py-5">
       <div className="row">
         <div className="figure col-12 col-md-6 p-2 p-lg-5">
           <img
-            className="img-main"
             src="https://res.cloudinary.com/donxjonx/image/upload/v1636673483/cavalieri/service_fwxecx.jpg"
             alt="banner"
           />

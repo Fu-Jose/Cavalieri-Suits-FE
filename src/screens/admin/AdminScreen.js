@@ -37,7 +37,7 @@ const AdminScreen = () => {
       {error ? (
         <Error error={error} />
       ) : (
-        <div className="d-flex row mx-auto">
+        <div className="d-flex row mx-auto h-100">
           <Helmet>
             <title>Cavalieri Suits | Administrador</title>
             <meta name="description" content="Página del Admin" />

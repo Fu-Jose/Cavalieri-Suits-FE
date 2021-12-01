@@ -39,10 +39,10 @@ export default function Sidebar() {
     history.push("/login");
   };
   return (
-    <div className="col-12 col-md-2 px-5 px-md-3 py-3 border-end">
+    <div className="col-12 col-md-2 py-3 border-end">
       <div className="row mx-auto my-3 my-md-0">
         <div className="col-6 col-md-12 px-0 px-md-3">
-          <h5 className="">Administrador</h5>
+          <h6 className="">Administrador</h6>
           <ul className="list-unstyled">
             <li className="my-2">
               <Link className="text-decoration-none text-black" to="/admin">
@@ -66,7 +66,7 @@ export default function Sidebar() {
           </ul>
         </div>
         <div className="col-6 col-md-12 px-0 px-md-3">
-          <h5 className="">Acceso rápido</h5>
+          <h6 className="">Acceso rápido</h6>
           <ul className="list-unstyled">
             <li className="my-2">
               <Link
@@ -92,13 +92,13 @@ export default function Sidebar() {
                 to="/admin/transactions"
               >
                 <BiDollar className="mx-2" />
-                Transacciones
+                Ventas
               </Link>
             </li>
           </ul>
         </div>
         <div className="col-6 col-md-12 px-0 px-md-3">
-          <h5 className="">Notificaciones</h5>
+          <h6 className="">Notificaciones</h6>
           <ul className="list-unstyled">
             <li className="my-2">
               <Link
@@ -121,7 +121,7 @@ export default function Sidebar() {
           </ul>
         </div>
         <div className="col-6 col-md-12 px-0 px-md-3">
-          <h5 className="">Personal</h5>
+          <h6 className="">Personal</h6>
           <ul className="list-unstyled">
             <li className="my-2">
               <BiBriefcaseAlt className="mx-2" />
