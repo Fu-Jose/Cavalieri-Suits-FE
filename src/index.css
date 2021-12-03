@@ -176,6 +176,10 @@ img {
   height: 100vh;
 }
 
+.profile-main {
+  height: 70vh;
+}
+
 .logo-img {
   max-height: 45px !important;
 }
@@ -187,6 +191,11 @@ img {
 .spinner-button {
   width: 1.5rem !important;
   height: 1.5rem !important;
+}
+
+.footer-icon {
+  width: 2rem !important;
+  height: 2rem !important;
 }
 
 /* //X-Small devices (575px and down)*/
@@ -230,7 +239,7 @@ img {
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .footer-text {
-    font-size: 2rem;
+    font-size: 1rem;
   }
   #home_newsletter_input {
     font-size: 0.8rem;
@@ -251,9 +260,9 @@ img {
     height: 400px !important;
   }
 
-  .cartscreen__left {
+  /* .cartscreen__left {
     border-right: 1px solid #000;
-  }
+  } */
 }
 
 /* // Large devices (desktops, 992px and up) */

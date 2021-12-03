@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function CheckoutSteps(props) {
   return (
-    <div className="row col-12 mx-auto">
+    <div className="row col-12 mx-auto fs-6">
       <div
         className={
           props.step1
@@ -37,7 +37,7 @@ export default function CheckoutSteps(props) {
           }
           to={props.step2 ? "/shipping" : "#"}
         >
-          Dirección
+          Dirección envío
         </Link>
       </div>
       <div

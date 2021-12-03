@@ -26,8 +26,8 @@ export default function Favorites({ user }) {
   };
 
   return (
-    <div className="col-12 col-lg-9 p-4">
-      <div className="row pe-4">
+    <div className="col-12 col-md-10 py-3 profile-main">
+      <div className="row p-3">
         <h3>Sus favoritos</h3>
       </div>
       <div className="row p-4">

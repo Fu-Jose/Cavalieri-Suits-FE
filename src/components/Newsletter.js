@@ -6,26 +6,26 @@ export default function Newsletter() {
   return (
     <>
       {!role ? (
-        <section className="d-flex bg-light container-fluid mx-auto row">
-          <div className="newsletter__image d-none d-md-block col-md-6 p-4">
+        <section className="bg-light container-fluid mx-auto row">
+          <div className="d-md-flex d-none col-md-6 p-4">
             <img
               src="https://res.cloudinary.com/donxjonx/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1634654236/cavalieri/cava2_pox6yx.jpg"
               alt="newsletter logo"
             />
           </div>
-          <div className="newsletter__content col-12 col-md-6 py-3 align-self-center">
-            <div className="text-center">
+          <div className="col-12 col-md-6 py-3 text-center align-self-center">
+            <div className="row">
               <h2>- Suscríbete -</h2>
-              <p>
+              <span>
                 Y recibe las últimas novedades y ofertas
                 <br />
                 directamente en tu bandeja de correo electrónico.
-              </p>
+              </span>
               <form>
                 <ul className="list-unstyled">
                   <li className="my-3">
                     <input
-                      id="home_newsletter_input"
+                      // id="home_newsletter_input"
                       className="border rounded-0 text-center p-1"
                       type="email"
                       placeholder="CORREO ELECTRÓNICO"

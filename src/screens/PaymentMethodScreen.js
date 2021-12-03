@@ -33,7 +33,7 @@ export default function PaymentMethodScreen(props) {
           className="row col-10 col-sm-10 col-md-8 col-lg-8 col-xl-6 mx-auto my-5"
           onSubmit={submitHandler}
         >
-          <div className="col-6 mx-auto my-auto">
+          <div className="mx-auto my-auto text-center">
             <Form.Check
               className="my-2"
               inline
@@ -57,15 +57,15 @@ export default function PaymentMethodScreen(props) {
               required
             />
           </div>
-          <div className="col-6 mx-auto my-3 p-3">
+          <div className="col-10 mx-auto my-3 p-3">
             <div className="shadow">
               <img
-                src="https://www.paypalobjects.com/webstatic/es_ES/mktg/banners-page/narrative4-faster-988x383-eses.jpg"
+                src="https://res.cloudinary.com/donxjonx/image/upload/v1638362612/pp-banner_cci84j.jpg"
                 alt="paypal banner"
               />
             </div>
           </div>
-          <div className="col-12 my-4 text-center my-5">
+          <div className="col-12 text-center my-3">
             <Button className="col-4" type="submit" variant="dark">
               Confirmar
             </Button>

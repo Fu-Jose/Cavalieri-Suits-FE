@@ -28,26 +28,26 @@ const ProductScreen = (req) => {
           content="Compra los mejores trajes a la medida, camisas, pantalones y zapatos italianos importados"
         />
       </Helmet>
-      {loading ? (
-        <Loading />
-      ) : error ? (
-        <h2>{error}</h2>
-      ) : (
-        <div className="row mx-auto">
-          <div className="d-flex text-center mb-3">
-            <div className="col-6 mx-auto">
-              <div className="position-absolute btn">
-                <BiSearch />
-              </div>
-              <input
-                className="searchbar btn btn-light bg-white border"
-                placeholder="Buscar..."
-                onChange={(e) => {
-                  setSearchTerm(e.target.value);
-                }}
-              />
+      <div className="row mx-auto">
+        <div className="d-flex text-center mb-3">
+          <div className="col-6 mx-auto">
+            <div className="position-absolute btn">
+              <BiSearch />
             </div>
+            <input
+              className="searchbar btn btn-light bg-white border"
+              placeholder="Buscar..."
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+              }}
+            />
           </div>
+        </div>
+        {loading ? (
+          <Loading />
+        ) : error ? (
+          <h2>{error}</h2>
+        ) : (
           <div className="row border-start border-end mx-auto p-3">
             {products
               .filter((product) => {
@@ -75,8 +75,8 @@ const ProductScreen = (req) => {
                 </div>
               ))}
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

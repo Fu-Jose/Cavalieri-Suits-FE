@@ -12,11 +12,9 @@ const Navbar = ({ click }) => {
   };
 
   return (
-    <nav className="d-flex sticky-top bg-white justify-content-between align-items-center border-bottom fs-5 px-4 py-2">
+    <nav className="d-flex sticky-top bg-white align-items-center border-bottom px-3 px-md-4 fs-5 py-2">
       <div className="col">
-        <div className="" onClick={click}>
-          <BiMenu role="button" />
-        </div>
+        <BiMenu role="button" onClick={click} />
       </div>
       <div className="col">
         <Link to="/">
@@ -27,23 +25,25 @@ const Navbar = ({ click }) => {
           />
         </Link>
       </div>
-      <ul className="d-flex col list-unstyled justify-content-end my-auto">
-        <li className="mx-1 ">
-          <Link className="text-black text-decoration-none" to="/cart">
-            <BiShoppingBag />
-            {cartItems.length > 0 ? (
-              <span className="fs-6">{getCartCount()}</span>
-            ) : (
-              <></>
-            )}
-          </Link>
-        </li>
-        <li className="mx-1 ">
-          <Link className="text-black text-decoration-none" to="/login">
-            <BiUser />
-          </Link>
-        </li>
-      </ul>
+      <div className="col">
+        <ul className="d-flex list-unstyled justify-content-end my-auto">
+          <li className="mx-1 ">
+            <Link className="text-black text-decoration-none" to="/cart">
+              <BiShoppingBag />
+              {cartItems.length > 0 ? (
+                <span className="fs-6">{getCartCount()}</span>
+              ) : (
+                <></>
+              )}
+            </Link>
+          </li>
+          <li className="mx-1 ">
+            <Link className="text-black text-decoration-none" to="/login">
+              <BiUser />
+            </Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };

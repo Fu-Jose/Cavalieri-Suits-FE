@@ -25,12 +25,10 @@ export default function MessengerScreen() {
       {error ? (
         <Error error={error} />
       ) : (
-        <div className="d-flex">
-          <div className="card col-8 mx-auto my-5">
-            <div className="row">
-              <Sidebar />
-              <Messenger />
-            </div>
+        <div className="col-12">
+          <div className="row mx-auto">
+            <Sidebar />
+            <Messenger />
           </div>
         </div>
       )}

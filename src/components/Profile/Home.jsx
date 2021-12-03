@@ -3,7 +3,7 @@ import dateFormat from "dateformat";
 
 export default function Home({ user }) {
   return (
-    <div className="col-12 col-md-9 px-5 px-md-3 p-4">
+    <div className="col-12 col-md-10 px-5 px-md-3 p-4 profile-main">
       <div className="row p-4">
         <div className="col">
           <div>

@@ -97,35 +97,36 @@ export default function Messenger() {
           Su sesión ha caducado. Cierre sesión y vuelva a intentarlo.
         </div>
       ) : (
-        <div className="row mx-auto col-12 col-md-9">
-          <div className="col-3 my-5 px-4">
-            <strong className="fs-4">CLIENTES</strong>
-            <input
-              className="rounded border mt-3 mb-2 mx-1 p-1"
-              placeholder="Buscar un cliente"
-            />
-            {/* <UsersList /> */}
-            {conversations.map((c, index) => (
-              <div
-                key={index}
-                onClick={() => setCurrentChat(c)}
-                style={{ cursor: "pointer" }}
-              >
-                <Conversations
-                  key={c._id}
-                  conversation={c}
-                  currentUser={user}
+        <div className="row mx-auto col-12 col-md-10 py-3">
+          <div className="col-12 col-md-3 py-3">
+            <div>
+              <strong className="fs-4">CHAT</strong>
+              <div>
+                <input
+                  className="rounded border mt-3 mb-2 mx-1 p-1"
+                  placeholder="Buscar un usuario"
                 />
+                {/* BUSCAR UN USUARIO */}
               </div>
-            ))}
+              {conversations.map((c, index) => (
+                <div
+                  key={index}
+                  onClick={() => setCurrentChat(c)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <Conversations
+                    key={c._id}
+                    conversation={c}
+                    currentUser={user}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="col-9 p-4 my-3 justify-content-evenly bg-light">
+          <div className="col-12 col-md-9 bg-light profile-main overflow-auto">
             {currentChat ? (
               <>
-                <div
-                  className="chatBoxTop d-flex flex-column rounded overflow-auto bg-light"
-                  style={{ height: "400px" }}
-                >
+                <div className="d-flex flex-column rounded overflow-auto bg-light">
                   {messages.length > 0 ? (
                     messages.map((m) => (
                       <div key={m._id} ref={scrollRef}>
@@ -142,7 +143,7 @@ export default function Messenger() {
                     </div>
                   )}
                 </div>
-                <div className="chatBoxBottom d-flex pt-4">
+                <div className="d-flex pt-4">
                   <textarea
                     className="form-control m-3"
                     placeholder="Escriba un mensaje..."
@@ -160,7 +161,7 @@ export default function Messenger() {
                 </div>
               </>
             ) : (
-              <div className="text-center mt-5">
+              <div className="text-center pt-5">
                 Historial vacío. Envía un mensaje...
               </div>
             )}

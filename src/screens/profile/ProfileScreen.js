@@ -21,17 +21,15 @@ export default function ProfileScreen({ history }) {
     <>
       <Helmet>
         <title>Cavalieri Suits | Perfil</title>
-        <meta name="description" content="Perfil del cliente Cavalieri Suits" />
+        <meta name="description" content="Perfil del cliente" />
       </Helmet>
       {error ? (
         <Error error={error} />
       ) : (
-        <div className="d-flex">
-          <div className="card col-8 mx-auto my-5">
-            <div className="row">
-              <Sidebar />
-              <Home user={user} />
-            </div>
+        <div className="col-12">
+          <div className="row mx-auto">
+            <Sidebar />
+            <Home user={user} />
           </div>
         </div>
       )}

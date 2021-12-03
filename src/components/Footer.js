@@ -11,60 +11,54 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="text-dark sticky-bottom border-top pt-5 mt-auto">
-      <div className="container footer-text">
-        <div className="row">
-          <div className="col-sm-12 col-md-12 col-lg-3 col-xl-3 text-center">
-            <div className="row my-3 px-5 p-lg-0">
-              <img
-                src="https://res.cloudinary.com/donxjonx/image/upload/v1632581901/cavalieri/LOGO_CAVALIERI_BN-2_kwx1cc.png"
-                alt="logo"
-              ></img>
-            </div>
-            <div className="d-flex my-3 py-3 fs-1 justify-content-around">
-              <FaCcPaypal />
-              <FaCcVisa />
-              <FaCcMastercard />
-              <FaCcAmex />
-            </div>
-          </div>
-          <div className="col-sm-12 col-md-12 col-lg-3 col-xl-3 text-center">
-            <strong>Compañía</strong>
-            <ul className="list-unstyled text-muted">
-              <li>Cookies y privacidad</li>
-              <li>Condiciones de venta</li>
-              <li>Trabaja con nosotros</li>
-              <li>Nuestras tiendas</li>
-            </ul>
-          </div>
-          <div className="col-sm-12 col-md-12 col-lg-3 col-xl-3 text-center">
-            <strong>Atención al cliente</strong>
-            <ul className="list-unstyled text-muted">
-              <li>Contáctenos</li>
-              <li>Métodos de pago</li>
-              <li>Ordenes y envíos</li>
-              <li>Devoluciones</li>
-            </ul>
-          </div>
-          <div className="col-sm-12 col-md-12 col-lg-3 col-xl-3 text-center">
-            <div>
-              <strong>Nuestras redes sociales</strong>
-            </div>
-            <div className="d-flex justify-content-evenly col my-3 fs-1">
-              <FaFacebookSquare />
-              <FaInstagramSquare />
-              <FaWhatsappSquare />
-            </div>
-          </div>
+    <footer className="row mx-auto border-top text-center">
+      <div className="py-3 col-12 col-md-6 col-lg-3 order-1 order-lg-1 row mx-auto justify-content-around align-items-center">
+        <div className="py-2">
+          <img
+            src="https://res.cloudinary.com/donxjonx/image/upload/v1632581901/cavalieri/LOGO_CAVALIERI_BN-2_kwx1cc.png"
+            alt="logo"
+          ></img>
+        </div>
+        <div className="d-flex p-3 justify-content-around">
+          <FaCcPaypal className="footer-icon" />
+          <FaCcVisa className="footer-icon" />
+          <FaCcMastercard className="footer-icon" />
+          <FaCcAmex className="footer-icon" />
         </div>
       </div>
-      <div className="container-fluid border-top">
-        <div className="row mt-1">
-          <span className="text-center fw-light">
-            Copyright 2021 © Cavalieri Suits S.r.l. - Av. Miguel H. Alcívar Mz.
-            303, Guayaquil | P.iva 10471441005 | NoShamo Web Consulting
-          </span>
+      <div className="py-3 col-12 col-md-6 col-lg-3 order-3 order-lg-2 align-self-center">
+        <strong>Compañía</strong>
+        <ul className="list-unstyled text-muted mb-0">
+          <li>Cookies y privacidad</li>
+          <li>Condiciones de venta</li>
+          <li>Trabaja con nosotros</li>
+          <li>Nuestras tiendas</li>
+        </ul>
+      </div>
+      <div className="py-3 col-12 col-md-6 col-lg-3 order-4 order-lg-3 align-self-center">
+        <strong>Atención al cliente</strong>
+        <ul className="list-unstyled text-muted mb-0">
+          <li>Contáctenos</li>
+          <li>Métodos de pago</li>
+          <li>Ordenes y envíos</li>
+          <li>Devoluciones</li>
+        </ul>
+      </div>
+      <div className="py-3 col-12 col-md-6 col-lg-3 order-2 order-lg-4 row mx-auto justify-content-around">
+        <div className="p-3">
+          <strong>Nuestras redes sociales</strong>
         </div>
+        <div className="d-flex p-3 justify-content-around">
+          <FaFacebookSquare className="footer-icon" />
+          <FaInstagramSquare className="footer-icon" />
+          <FaWhatsappSquare className="footer-icon" />
+        </div>
+      </div>
+      <div className="order-5 text-center border-top">
+        <span className="fw-light">
+          Copyright 2021 © Cavalieri Suits S.r.l. - Av. Miguel H. Alcívar Mz.
+          303, Guayaquil | NoShamo Web Consulting
+        </span>
       </div>
     </footer>
   );

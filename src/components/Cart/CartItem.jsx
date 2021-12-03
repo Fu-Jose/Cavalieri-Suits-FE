@@ -5,9 +5,14 @@ import { BiTrash } from "react-icons/bi";
 
 function CartItem({ item, qtyChangeHandler, removeFromCartHandler }) {
   return (
-    <div className="d-flex border-bottom align-items-center justify-content-around py-1">
+    <div className="d-flex border-bottom align-items-center justify-content-around py-2">
       <div className="cart-img">
-        <img src={item.imageUrl[0]} />
+        <Link
+          className="text-decoration-none text-reset"
+          to={`/product/${item.product}`}
+        >
+          <img src={item.imageUrl[0]} />
+        </Link>
       </div>
       <div className="col-6 align-self-start">
         <div className=" text-truncate">
@@ -34,7 +39,11 @@ function CartItem({ item, qtyChangeHandler, removeFromCartHandler }) {
         </div>
       </div>
       <div className="align-self-start cursor-pointer">
-        <BiTrash onClick={() => removeFromCartHandler(item.product)} />
+        <BiTrash
+          // style={{ height: "1.35em", width: "1.35em" }}
+          className="fs-4"
+          onClick={() => removeFromCartHandler(item.product)}
+        />
       </div>
     </div>
   );

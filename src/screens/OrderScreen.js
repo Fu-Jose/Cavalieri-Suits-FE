@@ -60,7 +60,7 @@ export default function OrderScreen(props) {
   ) : error ? (
     <Error error={error} />
   ) : (
-    <div className="container py-3 my-5">
+    <div className="container py-3 my-3">
       <Helmet>
         <title>{`Cavalieri Suits | ${order._id}`}</title>
         <meta name="description" content="Resumen del estado de su orden" />
@@ -69,15 +69,18 @@ export default function OrderScreen(props) {
       <div className="row justify-content-around">
         <div className="col-12 col-lg-5">
           <div className="card card-body my-3 col-12 shadow">
-            <div>
-              <strong>Nombre:</strong>
-              <p>{order.shippingAddress.fullName}</p>
+            <div className="my-1">
+              <strong>Nombre: </strong>
+              <span>{order.shippingAddress.fullName}</span>
+            </div>
+            <div className="my-1">
               <strong>Dirección:</strong>
-              <p>
+              <br />
+              <span>
                 {order.shippingAddress.address}, {order.shippingAddress.city},{" "}
                 {order.shippingAddress.postalCode},{" "}
                 {order.shippingAddress.country}
-              </p>
+              </span>
             </div>
           </div>
           <div className="card card-body my-3 col-12 shadow">
@@ -105,7 +108,7 @@ export default function OrderScreen(props) {
         </div>
         <div className="col-12 col-lg-5">
           <div className="card card-body my-3 text-center shadow">
-            <h2>Resumen de su compra:</h2>
+            <h2>Resumen de su compra</h2>
             <div className="row mb-3">
               <div className="col-6">Artículos:</div>
               <div className="col-6">${order.itemsPrice.toFixed(2)}</div>
@@ -123,9 +126,28 @@ export default function OrderScreen(props) {
             {!order.isPaid &&
               currentUser._id === order.user.id &&
               (!sdkReady ? (
-                <Loading />
+                <div className="d-flex justify-content-center align-items-center my-3">
+                  <div
+                    className="spinner-grow spinner-button mx-1 py-1"
+                    role="status"
+                  >
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
+                  <div
+                    className="spinner-grow spinner-button mx-1 py-1"
+                    role="status"
+                  >
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
+                  <div
+                    className="spinner-grow spinner-button mx-1 py-1"
+                    role="status"
+                  >
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
+                </div>
               ) : (
-                <div className="col-6 align-self-center mt-4">
+                <div className="col-8 col-md-4 col-lg-8 align-self-center mt-4">
                   {errorPay && (
                     <span className="badge bg-warning">{errorPay}</span>
                   )}
@@ -136,7 +158,7 @@ export default function OrderScreen(props) {
                   />
                 </div>
               ))}
-            <div className="row mx-auto justify-content-around">
+            <div className="row mx-auto my-3 justify-content-around">
               <div className="col-6">
                 {order.isPaid ? (
                   <span className="badge bg-success">

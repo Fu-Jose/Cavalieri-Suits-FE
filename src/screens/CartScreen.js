@@ -42,49 +42,49 @@ const CartScreen = () => {
         <title>Cavalieri Suits | Carrito</title>
         <meta name="description" content="Su carrito de compras" />
       </Helmet>
-      <div className="d-flex mb-3 my-lg-3">
-        <div className="col-12 col-lg-10 py-md-2 p-md-5 row mx-auto">
-          <div className="row shadow px-0 py-3 mx-auto">
-            <div className="cartscreen__left col-12 col-md-8">
-              <h2 className="py-2 m-0 border-bottom text-center">
-                CARRITO DE COMPRAS
-              </h2>
-              <div className="p-0">
-                {cartItems.length === 0 ? (
-                  <div className="text-center p-5">
-                    Su carrito está vacío. <Link to="/">Volver atrás?</Link>
-                  </div>
-                ) : (
-                  cartItems.map((item) => (
-                    <CartItem
-                      key={item.product}
-                      item={item}
-                      qtyChangeHandler={qtyChangeHandler}
-                      removeFromCartHandler={removeFromCartHandler}
-                    />
-                  ))
-                )}
+      <div className="row mx-3 my-lg-3 px-lg-5 mx-auto">
+        {/* <div className="col-12 col-lg-10 py-md-2 p-md-5 row mx-auto">
+          <div className="row shadow px-0 mx-auto"> */}
+        <div className="cartscreen__left col-12 col-md-8 px-0">
+          <h2 className="py-3 m-0 border-bottom text-center">
+            CARRITO DE COMPRAS
+          </h2>
+          <div className="px-0">
+            {cartItems.length === 0 ? (
+              <div className="text-center p-5">
+                Su carrito está vacío. <Link to="/">Volver atrás?</Link>
               </div>
+            ) : (
+              cartItems.map((item) => (
+                <CartItem
+                  key={item.product}
+                  item={item}
+                  qtyChangeHandler={qtyChangeHandler}
+                  removeFromCartHandler={removeFromCartHandler}
+                />
+              ))
+            )}
+          </div>
+        </div>
+        <div className="col-12 col-md-4 my-auto">
+          <div className="py-5 px-0 px-lg-5 my-auto text-center">
+            <div>
+              <p>
+                Subtotal ({getCartCount()}){" "}
+                {getCartCount() === 1 ? "artículo" : "artículos"}
+              </p>
+              <p>${getCartSubtotal().toFixed(2)}</p>
             </div>
-            <div className="col-12 col-md-4 my-auto">
-              <div className="py-3 px-0 px-lg-5 my-auto text-center">
-                <div>
-                  <p>
-                    Subtotal ({getCartCount()}){" "}
-                    {getCartCount() === 1 ? "artículo" : "artículos"}
-                  </p>
-                  <p>${getCartSubtotal().toFixed(2)}</p>
-                </div>
-                <div>
-                  <Button onClick={continueHandler} variant="dark">
-                    Continuar <BiCart />
-                  </Button>
-                </div>
-              </div>
+            <div>
+              <Button onClick={continueHandler} variant="dark">
+                Continuar <BiCart />
+              </Button>
             </div>
           </div>
         </div>
       </div>
+      {/* </div>
+      </div> */}
     </>
   );
 };

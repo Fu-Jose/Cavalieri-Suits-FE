@@ -47,7 +47,7 @@ export default function PlaceOrderScreen(props) {
   return (
     <>
       <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
-      <div className="container my-5">
+      <div className="container my-3 my-md-5">
         <Helmet>
           <title>Cavalieri Suits | Confirmar orden</title>
           <meta name="description" content="Confirme su orden con Cavalieri" />
@@ -55,21 +55,24 @@ export default function PlaceOrderScreen(props) {
         <div className="row justify-content-around">
           <div className="col-12 col-lg-5">
             <div className="card card-body my-3 col-12 shadow">
-              <div>
-                <strong>Nombre:</strong>
-                <p>{shippingAddress.fullName}</p>
+              <div className="my-1">
+                <strong>Nombre: </strong>
+                <span>{shippingAddress.fullName}</span>
+              </div>
+              <div className="my-1">
                 <strong>Dirección:</strong>
-                <p>
+                <br />
+                <span>
                   {shippingAddress.address}, {shippingAddress.city},{" "}
                   {shippingAddress.postalCode}, {shippingAddress.country}
-                </p>
+                </span>
               </div>
             </div>
             <div className="card card-body my-3 col-12 shadow">
-              <div>
+              <div className="my-1">
                 <strong>Método de Pago:</strong> {paymentMethod}
               </div>
-              <div className="">
+              <div className="my-1">
                 <strong>Artículos en el carrito:</strong>
                 <div>
                   {cartItems.map((item) => (
@@ -85,40 +88,39 @@ export default function PlaceOrderScreen(props) {
             </div>
           </div>
           <div className="col-12 col-lg-5">
-            <div className="card card-body my-3 px-5 shadow">
-              <h2>Resumen de su compra:</h2>
+            <div className="card card-body my-3 shadow text-center">
+              <h2>Resumen de su compra</h2>
               <div className="row p-3">
                 <div className="col-6">Artículos:</div>
                 <div className="col-6">${cart.itemsPrice.toFixed(2)}</div>
-
                 <div className="col-6">Costos de envío:</div>
                 <div className="col-6">${cart.shippingPrice.toFixed(2)}</div>
-
                 <div className="col-6">Impuestos:</div>
                 <div className="col-6">${cart.taxPrice.toFixed(2)}</div>
-
                 <div className="col-6">
                   <strong>Total a Pagar:</strong>
                 </div>
                 <div className="col-6">
                   <strong>${cart.totalPrice.toFixed(2)}</strong>
                 </div>
-                <div className="col text-center mt-5">
-                  <Button
-                    variant="dark"
-                    onClick={placeOrderHandler}
-                    disabled={cart.cartItems.length === 0}
-                  >
-                    CONFIRMAR ORDEN
-                  </Button>
-                </div>
-                {loading && <Loading />}
-                {error && (
+                {loading ? (
+                  <Loading />
+                ) : error ? (
                   <div
-                    className="alert alert-danger col-4 mx-auto"
+                    className="alert alert-danger col-6 mt-4 mx-auto"
                     role="alert"
                   >
                     {error}. Cierre sesión e inténtelo de nuevo
+                  </div>
+                ) : (
+                  <div className="col text-center mt-4">
+                    <Button
+                      variant="dark"
+                      onClick={placeOrderHandler}
+                      disabled={cart.cartItems.length === 0}
+                    >
+                      CONFIRMAR ORDEN
+                    </Button>
                   </div>
                 )}
               </div>

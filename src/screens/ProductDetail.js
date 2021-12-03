@@ -135,11 +135,11 @@ const ProductDetails = ({ match, history }) => {
                 )}
               </div>
               <div className="productdetails__right d-flex row justify-content-evenly mx-auto my-5 col-12 col-lg-7">
-                <Container className="left__info px-5 py-2">
+                <Container className="left__info px-3 px-md-4 px-lg-5 py-2">
                   <h2 className="left__name fw-bold fs-1">{product.name}</h2>
                   <p>{product.description}</p>
                 </Container>
-                <Container className="right__info px-5 py-2">
+                <Container className="right__info px-3 px-md-4 px-lg-5 py-2">
                   <p>
                     Precio: <strong>${product.price}</strong>
                   </p>
