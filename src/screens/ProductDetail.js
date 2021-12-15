@@ -87,7 +87,7 @@ const ProductDetails = ({ match, history }) => {
       ) : (
         <>
           {product._id && (
-            <div className="row">
+            <div className="row my-md-5">
               <Helmet>
                 <title>{`Cavalieri Suits | ${product.name}`}</title>
                 <meta name="description" content={`${product.description}`} />

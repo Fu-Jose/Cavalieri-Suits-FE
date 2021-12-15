@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 export default function Banner2() {
   return (
     <div className="container-fluid py-5">
-      <div className="row flex-column-reverse flex-md-row">
+      <div className="row flex-column-reverse flex-md-row justify-content-center">
         <div className="col-12 col-md-6 px-0 py-5 align-self-center text-center">
           <div className="text-black px-3">
-            <h2 className="fw-bold px-3 my-3">
-              Zapatos de cuero 100% ITALIANO
+            <h2 className="fw-bold px-3 my-5 fs-1">
+              Zapatos de cuero
+              <br />
+              100% ITALIANO
             </h2>
             <h3 className="fs-2 my-3">DESDE:</h3>
             <h3 className="fs-1 my-3">$299,00</h3>

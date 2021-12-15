@@ -11,7 +11,7 @@ export default function Banner3() {
         <div className="col-12 col-lg-4">
           <Link to="/products/cinturones">
             <img
-              className="my-3"
+              className="my-3 p-4"
               src="https://res.cloudinary.com/donxjonx/image/upload/v1635590427/cavalieri/cinturon_juh3pw.jpg"
               alt="cinturones"
             />
@@ -23,7 +23,7 @@ export default function Banner3() {
         <div className="col-12 col-lg-4">
           <Link to="/products/accesorios">
             <img
-              className="my-3"
+              className="my-3 p-4"
               src="https://res.cloudinary.com/donxjonx/image/upload/v1635590585/cavalieri/wrist_skull_l1moch.jpg"
               alt="brazaletes"
             />
@@ -35,7 +35,7 @@ export default function Banner3() {
         <div className="col-12 col-lg-4">
           <Link to="/products/accesorios">
             <img
-              className="my-3"
+              className="my-3 p-4"
               src="https://res.cloudinary.com/donxjonx/image/upload/v1635590394/cavalieri/corbatas2_uhzz2s.jpg"
               alt="corbatas"
             />

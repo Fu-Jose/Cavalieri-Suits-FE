@@ -194,8 +194,8 @@ img {
 }
 
 .footer-icon {
-  width: 2rem !important;
-  height: 2rem !important;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
 }
 
 /* //X-Small devices (575px and down)*/
@@ -215,6 +215,9 @@ img {
   .react-player {
     height: 250px !important;
   }
+  .footer-logo {
+    width: 70% !important;
+  }
 }
 
 /* // Small devices (landscape phones, 576px and up) */
@@ -233,6 +236,9 @@ img {
   } */
   .react-player {
     height: 300px !important;
+  }
+  .footer-logo {
+    width: 70% !important;
   }
 }
 
@@ -275,6 +281,9 @@ img {
   }
   .text {
     font-size: 1.5rem;
+  }
+  .figure {
+    max-width: 40% !important;
   }
 }
 

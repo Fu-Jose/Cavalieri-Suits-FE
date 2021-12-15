@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 export default function Banner() {
   return (
     <div className="container-fluid py-5">
-      <div className="row">
+      <div className="row justify-content-center">
         <div className="figure col-12 col-md-6 p-lg-5">
           <img
-            className="img-main "
+            className="img-main"
             src="https://res.cloudinary.com/donxjonx/image/upload/v1632485007/cavalieri/241970855_390203482597218_6613829671935614411_n.jpg_mbmwha.jpg"
             alt="banner"
           />
@@ -19,8 +19,9 @@ export default function Banner() {
         </div>
         <div className="col-12 col-md-6 px-0 py-5 align-self-center text-center">
           <div className="text-black px-3">
-            <h2 className="fw-bold px-3 my-3">
-              Los mejores precios en trajes importados a la medida.
+            <h2 className="fw-bold px-3 my-5 fs-1">
+              Los mejores precios <br />
+              en trajes importados a la medida.
             </h2>
             <h3 className="fs-2 my-3">DESDE:</h3>
             <h3 className="fs-1 my-3">$399,00</h3>

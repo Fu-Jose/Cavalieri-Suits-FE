@@ -48,7 +48,7 @@ const ProductScreen = (req) => {
         ) : error ? (
           <h2>{error}</h2>
         ) : (
-          <div className="row border-start border-end mx-auto p-3">
+          <div className="row mx-auto p-3">
             {products
               .filter((product) => {
                 if (searchTerm === "") {

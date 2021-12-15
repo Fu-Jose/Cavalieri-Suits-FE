@@ -42,7 +42,7 @@ const CartScreen = () => {
         <title>Cavalieri Suits | Carrito</title>
         <meta name="description" content="Su carrito de compras" />
       </Helmet>
-      <div className="row mx-3 my-lg-3 px-lg-5 mx-auto">
+      <div className="row mx-3 my-lg-5 px-lg-5 mx-auto">
         {/* <div className="col-12 col-lg-10 py-md-2 p-md-5 row mx-auto">
           <div className="row shadow px-0 mx-auto"> */}
         <div className="cartscreen__left col-12 col-md-8 px-0">
