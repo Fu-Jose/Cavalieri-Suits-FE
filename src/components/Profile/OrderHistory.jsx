@@ -43,7 +43,7 @@ export default function OrderHistoryScreen(props) {
               </tr>
             </thead>
             <tbody>
-              {orders.map((order) => (
+              {orders.reverse().map((order) => (
                 <tr key={order._id}>
                   <td className="text-truncate">
                     <Link to={`/order/${order._id}`}>{order._id}</Link>

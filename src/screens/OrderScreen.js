@@ -125,7 +125,18 @@ export default function OrderScreen(props) {
             </div>
             {!order.isPaid &&
               currentUser._id === order.user.id &&
-              (!sdkReady ? (
+              (sdkReady === true ? (
+                <div className="col-8 col-md-4 col-lg-8 align-self-center mt-4">
+                  {errorPay && (
+                    <span className="badge bg-warning">{errorPay}</span>
+                  )}
+                  {loadingPay && <Loading />}
+                  <PayPalButton
+                    amount={order.totalPrice.toFixed(2)}
+                    onSuccess={successPaymentHandler}
+                  />
+                </div>
+              ) : (
                 <div className="d-flex justify-content-center align-items-center my-3">
                   <div
                     className="spinner-grow spinner-button mx-1 py-1"
@@ -145,17 +156,6 @@ export default function OrderScreen(props) {
                   >
                     <span className="visually-hidden">Loading...</span>
                   </div>
-                </div>
-              ) : (
-                <div className="col-8 col-md-4 col-lg-8 align-self-center mt-4">
-                  {errorPay && (
-                    <span className="badge bg-warning">{errorPay}</span>
-                  )}
-                  {loadingPay && <Loading />}
-                  <PayPalButton
-                    amount={order.totalPrice.toFixed(2)}
-                    onSuccess={successPaymentHandler}
-                  />
                 </div>
               ))}
             <div className="row mx-auto my-3 justify-content-around">
