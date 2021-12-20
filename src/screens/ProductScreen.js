@@ -4,7 +4,10 @@ import { Helmet } from "react-helmet";
 import Product from "../components/Products/Product.jsx";
 import Loading from "../components/Loading";
 import { BiSearch } from "react-icons/bi";
-import { getProducts as listProducts } from "../redux/actions/productsActions";
+import {
+  getProducts as listProducts,
+  removeProductDetails,
+} from "../redux/actions/productsActions";
 
 const ProductScreen = (req) => {
   const dispatch = useDispatch();
@@ -16,6 +19,7 @@ const ProductScreen = (req) => {
   const category = req.location.pathname.substring(10);
 
   useEffect(() => {
+    dispatch(removeProductDetails());
     dispatch(listProducts(category));
   }, [dispatch, category]);
 
@@ -43,12 +47,12 @@ const ProductScreen = (req) => {
             />
           </div>
         </div>
-        {loading ? (
+        {loading === true ? (
           <Loading />
         ) : error ? (
           <h2>{error}</h2>
         ) : (
-          <div className="row mx-auto p-3">
+          <div className="row mx-auto p-3 justify-content-start">
             {products
               .filter((product) => {
                 if (searchTerm === "") {
@@ -61,7 +65,7 @@ const ProductScreen = (req) => {
                 return null;
               })
               .map((product, index) => (
-                <div className="col-sm-6 col-md-4 col-lg-2" key={index}>
+                <div className="col-sm-6 col-md-4 col-lg-2 p-2" key={index}>
                   <Product
                     key={index}
                     id={product._id}

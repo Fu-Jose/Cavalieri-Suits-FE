@@ -3,7 +3,7 @@ import React from "react";
 export default function Banner4() {
   return (
     <div className="container-fluid py-5">
-      <div className="row">
+      <div className="row justify-content-center">
         <div className="figure col-12 col-md-6 p-2 p-lg-5">
           <img
             src="https://res.cloudinary.com/donxjonx/image/upload/v1636673483/cavalieri/service_fwxecx.jpg"
