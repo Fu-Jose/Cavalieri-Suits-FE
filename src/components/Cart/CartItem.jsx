@@ -1,5 +1,3 @@
-// import "./CartItem.css";
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BiTrash } from "react-icons/bi";
 
@@ -11,7 +9,7 @@ function CartItem({ item, qtyChangeHandler, removeFromCartHandler }) {
           className="text-decoration-none text-reset"
           to={`/product/${item.product}`}
         >
-          <img src={item.imageUrl[0]} />
+          <img src={item.imageUrl[0]} alt={item.name} />
         </Link>
       </div>
       <div className="col-6 align-self-start">

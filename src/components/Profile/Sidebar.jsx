@@ -1,11 +1,9 @@
 import React from "react";
 import { useEffect } from "react";
 import {
-  BiHome,
   BiHeart,
   BiDollar,
   BiEnvelope,
-  BiStar,
   BiLogOut,
 } from "react-icons/bi";
 import { useDispatch } from "react-redux";

@@ -1,7 +1,7 @@
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Helmet } from "react-helmet";
-import { Button, Container } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import CartItem from "../components/Cart/CartItem";
 import { BiCart } from "react-icons/bi";
 import { addToCart, removeFromCart } from "../redux/actions/cartActions";
